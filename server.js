@@ -14,36 +14,15 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/dist')));
 
-// This route is intended to render the main/homepage html from public/index.js but
-// I'm only seeing the raw/plain text from that file
+// sendFile sends the /public/index.html file to the client
 app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/index.html')));
-
-// The below code sends the same html written in public/index.js and renders on the localhost main page
-/* app.get('/', (req, res, next) => {
-  try {
-    res.send(html`
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-      </head>
-      <body>
-        <h2> Kettlebell Creamery</h2>
-      </body>
-      </html>`)
-  }
-  catch(err) {
-    console.log(err)
-  }
-})*/
 
 
 // bringing in my routes folder
 app.use('/api', require('./routes/index'));
 
 
-// const port = 3000;
+
 const port = process.env.PORT || 3000;
 
 const init = async () => {

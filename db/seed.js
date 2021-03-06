@@ -1,7 +1,7 @@
 const pg = require('pg');
 
-const client = new pg.Client('postgres://localhost/kb_creamery_db');
-// const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/kb_creamery_db');
+// const client = new pg.Client('postgres://localhost/kb_creamery_db');
+const client = new pg.Client(process.env.DATABASE_URL || 'postgres://localhost/kb_creamery_db');
 const syncAndSeed = async () => {
   const SQL = `
   DROP TABLE IF EXISTS "Ice Cream";
@@ -66,6 +66,12 @@ module.exports = {
 
 
 // CREATE TABLE "Customer"(
+//   id INTEGER PRIMARY KEY,
+//   name VARCHAR(100) NOT NULL
+// );
+
+
+// CREATE TABLE "Sale"(
 //   id INTEGER PRIMARY KEY,
 //   name VARCHAR(100) NOT NULL
 // );

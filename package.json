@@ -7,7 +7,7 @@
     "build": "webpack",
     "build-dev": "npm run build -- --mode=development --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "npm run build-dev & nodemon server.js",
+    "start-dev": "npm run build-dev & nodemon server.js --ignore /src --ignore /dist",
     "start": "node server.js"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "pg": "^8.5.1"
   },
   "devDependencies": {
+    "axios": "^0.21.1",
     "nodemon": "^2.0.7",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0"
