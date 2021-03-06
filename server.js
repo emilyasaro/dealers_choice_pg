@@ -2,6 +2,7 @@
 // flavors of the month in a list on the main page
 // click to see the two flavors
 // click on the flavor to go to the ingredients/product description
+// customer makes an order by selecting the month
 
 const { client, syncAndSeed } = require('./db/seed');
 const express = require('express');
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+// bringing in my routes folder
 app.use('/api', require('./routes/index'));
 // app.get('/', async (req, res, next) => {
 //   try {
