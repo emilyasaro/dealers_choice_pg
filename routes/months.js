@@ -2,7 +2,9 @@ const monthRouter = require('express').Router();
 const { client } = require('../db/seed.js');
 
 monthRouter.get('/months', async (req, res, next) => {
+
   try {
+    console.log('testing')
     const response = await client.query('SELECT * FROM "Month";');
     res.send(response.rows);
   }
