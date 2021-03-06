@@ -1,9 +1,9 @@
-const html = require('html-template-tag');
+<!-- I only made this file because webpack is looking for src/index.html...
+ I am still learning how to setup configurations -->
 
-const homePage = () => {
-  return html`
-  <html lang="en">
+ <html lang="en">
   <head>
+  <script defer src="/main.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -11,7 +11,4 @@ const homePage = () => {
   <body>
     <h2> Kettlebell Creamery</h2>
   </body>
-  </html>`
-}
-
-module.exports = homePage;
+  </html>

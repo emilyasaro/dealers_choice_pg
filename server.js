@@ -12,10 +12,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 // This route is intended to render the main/homepage html from public/index.js but
 // I'm only seeing the raw/plain text from that file
-app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/index.js')));
+app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
 // The below code sends the same html written in public/index.js and renders on the localhost main page
 /* app.get('/', (req, res, next) => {
